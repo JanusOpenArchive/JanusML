@@ -91,7 +91,7 @@ function copyHTML() {
 <head>
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<title>Page Title | Rubisco Exambook</title>
+<title>Page Title | JanusML</title>
 <link rel="shortcut icon" href="https://janusml.pages.dev/assets/favicon.png" type="image/x-icon">
 <style>
 @import url(https://janusml.pages.dev/library/janusml.css);
