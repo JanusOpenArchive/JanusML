@@ -103,7 +103,6 @@ ${markdownText.replace(/-->/g, "--&gt;")}
 -->
 ${htmlContent}
 </body>
-
 </html>`;
     navigator.clipboard.writeText(fullHTML).then(() => {
         alert("Full HTML copied to clipboard!");
