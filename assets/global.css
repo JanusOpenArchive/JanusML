@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Andorra Mono';
+    src: url(./AndorraMono.ttf);
+}
+
+@font-face {
+    font-family: 'Kilroy';
+    src: url(./HandsetGrotesk-VF.ttf);
+}
+
+@font-face {
+    font-family: 'Normal Serif';
+    src: url(./NormalSerif-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Normal Serif';
+    src: url(./NormalSerif-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Normal Serif';
+    src: url(./NormalSerif-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Normal Serif';
+    src: url(./NormalSerif-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Search Icons';
+    src: url(./RubiscoAdacemicSearchIcons.ttf);
+}

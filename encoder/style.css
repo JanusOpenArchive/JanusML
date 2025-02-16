@@ -1,0 +1,73 @@
+@import url(https://exambook.pages.dev/library/marklang/marklang.css);
+
+body {
+    font-family: var(--font-family-base), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #f4f4f4;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #d9d9d9;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#editorContainer {
+    flex: 1;
+    height: calc(100vh - 160px);
+    border: 1px solid #d9d9d9;
+    background: #ffffff;
+}
+
+#preview {
+    flex: 1;
+    font-family: var(--font-family-base), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: 1px solid #d9d9d9;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.settings {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: #f5f7fc;
+}
+
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background: #ffffff;
+    color: #324dc7;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #192764;
+    color: #ffffff;
+    border-color: #192764;
+}
+
+label {
+    font-size: 14px;
+}
