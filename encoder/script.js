@@ -10,7 +10,7 @@ require(["vs/editor/editor.main"], function () {
     });
 
     editor.getModel().onDidChangeContent(() => {
-        convertMarkdown();
+        convertJanusML();
     });
 
     const font = new FontFace('AndorraMono', 'url(https://exambook.pages.dev/assets/fonts/AndorraMono.ttf)');
@@ -72,9 +72,9 @@ const md = window.janusml()
     })
     .use(window.janusmlAttrs);
 
-function convertMarkdown() {
-    let markdownText = editor.getValue();
-    let htmlContent = md.render(markdownText);
+function convertJanusML() {
+    let janusmlText = editor.getValue();
+    let htmlContent = md.render(janusmlText);
     document.getElementById("preview").innerHTML = htmlContent;
 }
 
@@ -84,7 +84,7 @@ window.addEventListener("beforeunload", function (event) {
 });
 
 function copyHTML() {
-    let markdownText = editor.getValue();
+    let janusmlText = editor.getValue();
     let htmlContent = document.getElementById("preview").innerHTML;
     let fullHTML = `<!DOCTYPE html>
 <html>
@@ -98,8 +98,8 @@ function copyHTML() {
 </style>
 </head>
 <body>
-<!-- Original Markdown:
-${markdownText.replace(/-->/g, "--&gt;")}
+<!-- Original JanusML:
+${janusmlText.replace(/-->/g, "--&gt;")}
 -->
 ${htmlContent}
 </body>
