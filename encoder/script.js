@@ -3,7 +3,7 @@ require(["vs/editor/editor.main"], function () {
         value: "Enter JanusML here...",
         language: "markdown",
         theme: "vs-dark",
-        fontFamily: 'AndorraMono, monospace',
+        fontFamily: 'KilroyMono, monospace',
         automaticLayout: true,
         wordWrap: "off",
         minimap: { enabled: true }
@@ -13,7 +13,7 @@ require(["vs/editor/editor.main"], function () {
         convertJanusML();
     });
 
-    const font = new FontFace('AndorraMono', 'url(https://exambook.pages.dev/assets/fonts/AndorraMono.ttf)');
+    const font = new FontFace('KilroyMono', 'url(https://janusml.pages.dev/assets/KilroyMono-VF.ttf)');
 
     font.load().then(() => {
         document.fonts.add(font);
@@ -70,6 +70,42 @@ const md = window.janusml()
             }
         }
     })
+    .use(janusmlContainer, 'success', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="alert success">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
+    .use(janusmlContainer, 'container', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="container-box default">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
+    .use(janusmlContainer, 'important', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="container-box important">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
+    .use(janusmlContainer, 'inline', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="alert inline">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
     .use(window.janusmlAttrs);
 
 function convertJanusML() {
@@ -91,7 +127,7 @@ function copyHTML() {
 <head>
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<title>Page Title | JanusML</title>
+<title>Page Title | JANUS</title>
 <link rel="shortcut icon" href="https://janusml.pages.dev/assets/favicon.png" type="image/x-icon">
 <style>
 @import url(https://janusml.pages.dev/library/janusml.css);
