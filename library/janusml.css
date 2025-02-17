@@ -9,12 +9,12 @@
 /* Typefaces */
 @font-face {
     font-family: 'Kilroy';
-    src: url(./assets/Kilroy-VF.ttf);
+    src: url(/assets/Kilroy-VF.ttf);
 }
 
 @font-face {
     font-family: 'Kilroy Mono';
-    src: url(./assets/KilroyMono-VF.ttf);
+    src: url(/assets/KilroyMono-VF.ttf);
     font-weight: 400;
 }
 
