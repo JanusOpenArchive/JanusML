@@ -129,9 +129,7 @@ function copyHTML() {
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <title>Page Title | JANUS</title>
 <link rel="shortcut icon" href="https://janusml.pages.dev/assets/favicon.png" type="image/x-icon">
-<style>
-@import url(https://janusml.pages.dev/library/janusml.css);
-</style>
+<link rel="stylesheet" href="https://janusml.pages.dev/library/janusml.css">
 </head>
 <body>
 <!-- Original JanusML:
