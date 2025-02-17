@@ -9,36 +9,36 @@
 /* Typefaces */
 @font-face {
     font-family: 'Kilroy';
-    src: url(/assets/Kilroy-VF.ttf);
+    src: url(https://janusml.pages.dev/assets/Kilroy-VF.ttf);
 }
 
 @font-face {
     font-family: 'Kilroy Mono';
-    src: url(/assets/KilroyMono-VF.ttf);
+    src: url(https://janusml.pages.dev/assets/KilroyMono-VF.ttf);
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Janus';
-    src: url(/assets/Janus-Roman.ttf);
+    src: url(https://janusml.pages.dev/assets/Janus-Roman.ttf);
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Janus';
-    src: url(/assets/Janus-Bold.ttf);
+    src: url(https://janusml.pages.dev/assets/Janus-Bold.ttf);
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'Janus';
-    src: url(/assets/Janus-Italic.ttf);
+    src: url(https://janusml.pages.dev/assets/Janus-Italic.ttf);
     font-weight: 400;
     font-style: italic;
 }
 @font-face {
     font-family: 'Janus';
-    src: url(/assets/Janus-BoldItalic.ttf);
+    src: url(https://janusml.pages.dev/assets/Janus-BoldItalic.ttf);
     font-weight: 700;
     font-style: italic;
 }
