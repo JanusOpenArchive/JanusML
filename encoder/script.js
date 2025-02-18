@@ -41,6 +41,7 @@ const md = window.janusml()
     .use(window["janusmlSub"] || janusmlSub)
     .use(window["janusmlSup"] || janusmlSup)
     .use(window["janusmlAbbr"] || janusmlAbbr)
+    .use(window["janusmlEmoji"] || janusmlEmoji)
     .use(window.janusmlContainer)
     .use(window.janusmlAnchor)
     .use(janusmlContainer, 'info', {
