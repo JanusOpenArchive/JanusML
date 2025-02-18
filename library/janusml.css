@@ -1,12 +1,9 @@
-@import url(https://tetunori.github.io/fluent-emoji-webfont/sample/list/style.css);
-
 /* Root Properties */
 :root {
     --font-family-base: 'Kilroy';
     --font-family-monospace: 'Kilroy Mono';
     --font-family-sans-serif: 'Kilroy';
     --font-family-serif: 'Janus';
-    --font-family-emoji: 'Fluent Emoji Color';
 }
 
 /* Typefaces */
@@ -48,7 +45,7 @@
 
 /* Global Typography */
 body {
-    font-family: var(--font-family-base), var(--font-family-emoji), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: var(--font-family-base), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #202124;
     background-color: #ffffff;
     margin: 0;
@@ -57,7 +54,7 @@ body {
 
 /* Blockquotes */
 blockquote {
-    font-family: var(--font-family-serif), var(--font-family-emoji), 'Times New Roman', Times, serif;
+    font-family: var(--font-family-serif), 'Times New Roman', Times, serif;
     font-style: normal;
     color: #595959;
     background: #ffffff;
@@ -78,7 +75,7 @@ blockquote::before {
 
 /* Inline Code */
 code {
-    font-family: var(--font-family-monospace), var(--font-family-emoji), monospace;
+    font-family: var(--font-family-monospace), monospace;
     color: #37474f;
     font-size: 0.95em;
     background: #f1f3f4;
@@ -89,7 +86,7 @@ code {
 
 /* Code Blocks */
 pre {
-    font-family: var(--font-family-monospace), var(--font-family-emoji), monospace;
+    font-family: var(--font-family-monospace), monospace;
     color: #37474f;
     font-size: 0.95em;
     background: #f1f3f4;
@@ -144,7 +141,7 @@ a:hover {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family-serif), var(--font-family-emoji), 'Times New Roman', Times, serif;
+    font-family: var(--font-family-serif), 'Times New Roman', Times, serif;
     color: #1f1f1f;
 }
 h1 {
@@ -160,11 +157,11 @@ h2 {
     font-weight: 400;
 }
 h3 {
-    font-family: var(--font-family-base), var(--font-family-emoji), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: var(--font-family-base), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.2em;
 }
 h4, h5, h6 {
-    font-family: var(--font-family-base), var(--font-family-emoji), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: var(--font-family-base), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* Tables */
@@ -203,7 +200,7 @@ ul.task-list input[type="checkbox"] {
     padding: 15px;
     margin: 15px 0;
     border-radius: 5px;
-    font-family: var(--font-family-sans-serif), var(--font-family-emoji)s, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: var(--font-family-sans-serif), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .alert.info, .container-box.info {
