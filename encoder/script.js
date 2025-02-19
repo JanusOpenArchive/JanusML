@@ -3,7 +3,7 @@ require(["vs/editor/editor.main"], function () {
         value: "Enter JanusML here...",
         language: "markdown",
         theme: "vs-dark",
-        fontFamily: 'KilroyMono, monospace',
+        fontFamily: 'KilroyMono, RubiscoEmojiColor, monospace',
         automaticLayout: true,
         wordWrap: "off",
         minimap: { enabled: true }
