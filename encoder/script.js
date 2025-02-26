@@ -98,6 +98,15 @@ const md = window.janusml()
             }
         }
     })
+    .use(janusmlContainer, 'side', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="container-box side">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
     .use(janusmlContainer, 'inline', {
         render: function (tokens, idx) {
             if (tokens[idx].nesting === 1) {

@@ -244,50 +244,6 @@ ul.task-list input[type="checkbox"] {
     font-weight: bold;
 }
 
-.container-box.side {
-    background: #f8f9fa; /* Lighter background similar to Wikipedia */
-    color: #222; /* Darker text for readability */
-    border: 1px solid #a2a9b1; /* Subtle border */
-    border-left: 5px solid #7f7f7f; /* Accent border */
-    padding: 10px;
-    margin: 10px 0;
-    font-family: sans-serif;
-    font-size: 14px;
-    max-width: 300px; /* Adjust width */
-}
-
-/* Title styling */
-.container-box.side .title {
-    font-weight: bold;
-    font-size: 16px;
-    text-align: center;
-    background: #dee2e6; /* Light gray background */
-    padding: 5px;
-    margin-bottom: 8px;
-}
-
-/* Image styling */
-.container-box.side img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-
-/* Item: Text styling */
-.container-box.side .item {
-    font-weight: bold;
-    display: inline-block;
-    width: 90px; /* Adjusted width for alignment */
-}
-
-.container-box.side .text {
-    display: inline-block;
-    width: calc(100% - 100px);
-}
-
-
 /* Inline Alerts */
 .alert.inline {
     display: inline-block;
