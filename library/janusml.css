@@ -248,12 +248,11 @@ ul.task-list input[type="checkbox"] {
     background: #f8f9fa; /* Lighter background similar to Wikipedia */
     color: #222; /* Darker text for readability */
     border: 1px solid #a2a9b1; /* Subtle border */
-    border-left: 5px solid #7f7f7f; /* Accent border */
-    align-self: center;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px auto; /* Center horizontally */
     font-size: 14px;
     max-width: calc(100% - 60px); /* Adjust width */
+    display: block; /* Ensure block-level behavior */
 }
 
 /* Title styling */
