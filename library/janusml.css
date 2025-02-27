@@ -249,11 +249,11 @@ ul.task-list input[type="checkbox"] {
     color: #222; /* Darker text for readability */
     border: 1px solid #a2a9b1; /* Subtle border */
     border-left: 5px solid #7f7f7f; /* Accent border */
+    align-self: center;
     padding: 10px;
     margin: 10px 0;
-    font-family: sans-serif;
     font-size: 14px;
-    max-width: 300px; /* Adjust width */
+    max-width: calc(100% - 60px); /* Adjust width */
 }
 
 /* Title styling */
