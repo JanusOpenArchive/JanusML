@@ -224,6 +224,12 @@ ul.task-list input[type="checkbox"] {
     border-left: 5px solid #ed1c24;
 }
 
+.alert.error, .container-box.error {
+    background: #ed1c233d;
+    color: #1e1e1e;
+    border-left: 5px solid #ed1c24;
+}
+
 .alert.success, .container-box.success {
     background: #22b14c3d;
     color: #1e1e1e;
