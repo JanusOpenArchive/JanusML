@@ -41,19 +41,19 @@
 }
 @font-face {
     font-family: 'Evermore Sans';
-    src: url(https://janusml.pages.dev/assets/type/EvermoreSans-Italic.otf);
+    src: url(https://janusml.pages.dev/assets/type/EvermoreSans-Italic.ttf);
     font-weight: 400;
     font-style: italic;
 }
 @font-face {
     font-family: 'Evermore Sans';
-    src: url(https://janusml.pages.dev/assets/type/EvermoreSans-Bold.otf);
+    src: url(https://janusml.pages.dev/assets/type/EvermoreSans-Bold.ttf);
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'Evermore Sans';
-    src: url(https://janusml.pages.dev/assets/type/EvermoreSans-BoldItalic.otf);
+    src: url(https://janusml.pages.dev/assets/type/EvermoreSans-BoldItalic.ttf);
     font-weight: 700;
     font-style: italic;
 }
