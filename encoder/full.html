@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JanusML Encoder</title>
+    <link rel="shortcut icon" href="https://janusml.pages.dev/assets/favicon.png" type="image/x-icon">
+    <script src="https://janusml.pages.dev/library/janusml.js"></script>
+    <script>var require = { paths: { 'vs': 'https://cdn360.pages.dev/library/andorra/min/vs' } };</script>
+    <script src="https://cdn360.pages.dev/library/andorra/min/vs/loader.js"></script>
+    <style>
+        @import url(https://janusml.pages.dev/library/janusml.css);
+
+body {
+    font-family: var(--font-family-base), var(--font-family-emoji), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #f4f4f4;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #d9d9d9;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#editorContainer {
+    flex: 1;
+    height: calc(100vh - 160px);
+    border: 1px solid #d9d9d9;
+    background: #ffffff;
+}
+
+#preview {
+    flex: 1;
+    font-family: var(--font-family-base), var(--font-family-emoji), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: 1px solid #d9d9d9;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.settings {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: #f5f7fc;
+}
+
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background: #ffffff;
+    color: #324dc7;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #192764;
+    color: #ffffff;
+    border-color: #192764;
+}
+
+label {
+    font-size: 14px;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>JanusML Encoder</h2>
+        <button onclick="copyHTML()">Copy HTML to Clipboard</button>
+    </div>
+
+    <div class="settings">
+        <label>
+            <input type="checkbox" id="toggleLineWrap"> Line Wrap
+        </label>
+        <label>
+            <input type="checkbox" id="toggleMinimap" checked> Minimap
+        </label>
+    </div>
+
+    <div class="container">
+        <div id="editorContainer"></div>
+        <div id="preview"></div>
+    </div>
+    <script>
+        require(["vs/editor/editor.main"], function () {
+    window.editor = andorra.editor.create(document.getElementById("editorContainer"), {
+        value: "Enter JanusML here...",
+        language: "markdown",
+        theme: "vs-dark",
+        fontFamily: 'KilroyMono, RubiscoEmojiColor, monospace',
+        automaticLayout: true,
+        wordWrap: "off",
+        minimap: { enabled: true }
+    });
+
+    editor.getModel().onDidChangeContent(() => {
+        convertJanusML();
+    });
+
+    const font = new FontFace('KilroyMono', 'url(https://janusml.pages.dev/assets/KilroyMono-VF.ttf)');
+
+    font.load().then(() => {
+        document.fonts.add(font);
+        andorra.editor.remeasureFonts();
+    }).catch((error) => {
+        console.error('Error loading custom font:', error);
+    });
+
+    // Toggle line wrap
+    document.getElementById("toggleLineWrap").addEventListener("change", function () {
+        editor.updateOptions({ wordWrap: this.checked ? "on" : "off" });
+    });
+
+    // Toggle minimap
+    document.getElementById("toggleMinimap").addEventListener("change", function () {
+        editor.updateOptions({ minimap: { enabled: this.checked } });
+    });
+});
+
+const md = window.janusml()
+    .use(window["janusmlFootnote"] || janusmlFootnote)
+    .use(window["janusmlDeflist"] || janusmlDeflist)
+    .use(window["janusmlTaskLists"] || janusmlTaskLists)
+    .use(window["janusmlMark"] || janusmlMark)
+    .use(window["janusmlSub"] || janusmlSub)
+    .use(window["janusmlSup"] || janusmlSup)
+    .use(window["janusmlAbbr"] || janusmlAbbr)
+    .use(window["janusmlEmoji"] || janusmlEmoji)
+    .use(window.janusmlContainer)
+    .use(window.janusmlAnchor)
+    .use(janusmlContainer, 'info', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="alert info">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
+    .use(janusmlContainer, 'warning', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="alert warning">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
+    .use(janusmlContainer, 'danger', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="alert danger">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
+    .use(janusmlContainer, 'success', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="alert success">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
+    .use(janusmlContainer, 'container', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="container-box default">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
+    .use(janusmlContainer, 'important', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="container-box important">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
+    .use(janusmlContainer, 'error', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="container-box error">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
+    .use(janusmlContainer, 'side', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="container-box side">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
+    .use(janusmlContainer, 'inline', {
+        render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+                return '<div class="alert inline">';
+            } else {
+                return '</div>\n';
+            }
+        }
+    })
+    .use(window.janusmlAttrs);
+
+function convertJanusML() {
+    let janusmlText = editor.getValue();
+    let htmlContent = md.render(janusmlText);
+    document.getElementById("preview").innerHTML = htmlContent;
+}
+
+window.addEventListener("beforeunload", function (event) {
+    event.preventDefault();
+    event.returnValue = "Are you sure you want to leave? Your changes may not be saved.";
+});
+
+function copyHTML() {
+    let janusmlText = editor.getValue();
+    let htmlContent = document.getElementById("preview").innerHTML;
+    let fullHTML = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Page Title | JANUS</title>
+<link rel="shortcut icon" href="https://janusml.pages.dev/assets/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="https://janusml.pages.dev/library/janusml.css">
+</head>
+<body>
+<!-- Original JanusML:
+${janusmlText.replace(/-->/g, "--&gt;")}
+-->
+${htmlContent}
+</body>
+</html>`;
+    navigator.clipboard.writeText(fullHTML).then(() => {
+        alert("Full HTML copied to clipboard!");
+    }).catch(err => {
+        alert("Failed to copy: " + err);
+    });
+}
+    </script>
+</body>
+</html>
