@@ -1,7 +1,7 @@
 /* Root Properties */
 :root {
     --font-family-base: 'Evermore Sans';
-    --font-family-monospace: monospace;
+    --font-family-monospace: 'Evermore Mono';
     --font-family-sans-serif: 'Evermore Sans';
     --font-family-serif: 'Evermore Book';
     --font-family-emoji: 'Segoe Emoji';
@@ -54,6 +54,31 @@
 @font-face {
     font-family: 'Evermore Sans';
     src: url(https://janusml.pages.dev/assets/type/EvermoreSans-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Evermore Mono';
+    src: url(https://janusml.pages.dev/assets/type/EvermoreMono-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Evermore Mono';
+    src: url(https://janusml.pages.dev/assets/type/EvermoreMono-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Evermore Mono';
+    src: url(https://janusml.pages.dev/assets/type/EvermoreMono-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Evermore Mono';
+    src: url(https://janusml.pages.dev/assets/type/EvermoreMono-BoldItalic.ttf);
     font-weight: 700;
     font-style: italic;
 }
