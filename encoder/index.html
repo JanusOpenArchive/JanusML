@@ -64,7 +64,6 @@
             overflow: auto;
         }
 
-
         #editorContainer {
             position: relative;
             z-index: 10;
@@ -149,7 +148,7 @@
                 value: "Enter JanusML here...",
                 language: "markdown",
                 theme: "vs-dark",
-                fontFamily: 'KilroyMono, RubiscoEmojiColor, monospace',
+                fontFamily: 'Evermore Mono, RubiscoEmojiColor, monospace',
                 automaticLayout: true,
                 wordWrap: "off",
                 minimap: { enabled: true }
@@ -159,12 +158,15 @@
                 convertJanusML();
             });
 
-            const font = new FontFace('KilroyMono', 'url(https://janusml.pages.dev/assets/KilroyMono-VF.ttf)');
-            font.load().then(() => {
-                document.fonts.add(font);
-                andorra.editor.remeasureFonts();
-            }).catch((error) => {
-                console.error('Error loading custom font:', error);
+            function ensureFontsLoaded(callback) {
+                document.fonts.ready.then(() => {
+                    andorra.editor.remeasureFonts();
+                    callback();
+                });
+            }
+
+            ensureFontsLoaded(() => {
+                console.log("Fonts loaded and remeasured.");
             });
 
             document.getElementById("toggleLineWrap").addEventListener("change", function () {
